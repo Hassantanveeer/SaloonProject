@@ -12,7 +12,7 @@
     <?php include("includes/upernav.php");   ?>
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-primary pb-6">
+    <div class="header bg-dark pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
@@ -81,10 +81,10 @@
                 <div class="card-body">
                   <div class="row">
                     <div class="col">
-                      <h5 class="card-title text-uppercase text-muted mb-0">Total SubCategories</h5>
+                      <h5 class="card-title text-uppercase text-muted mb-0">Total Promos</h5>
                       <span class="h2 font-weight-bold mb-0"><?php
                       require 'db.php';
-                  $query="SELECT itemId from item order by itemId";
+                  $query="SELECT promoId from promo order by promoId";
                   $query_run=mysqli_query($connection,$query);
                   $row=mysqli_num_rows($query_run);
                   echo $row;

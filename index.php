@@ -9,7 +9,7 @@
   <!-- Main content -->
   <div class="main-content">
     <!-- Header -->
-    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+    <div class="header bg-gradient-dark py-7 py-lg-8 pt-lg-9">
       <div class="container">
         <div class="header-body text-center mb-7">
           <div class="row justify-content-center">
@@ -53,7 +53,7 @@
                   </div>
                 </div>
                 <div class="text-center">
-                  <button type="submit" class="btn btn-primary my-4" name="signin">Sign in</button>
+                  <button type="submit" class="btn btn-danger my-4" name="signin">Sign in</button>
                 </div>
               </form>
             </div>

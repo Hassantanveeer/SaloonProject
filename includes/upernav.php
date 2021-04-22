@@ -1,4 +1,4 @@
-<nav class="navbar navbar-top navbar-expand navbar-dark bg-primary border-bottom">
+<nav class="navbar navbar-top navbar-expand navbar-dark bg-dark border-bottom">
       <div class="container-fluid">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- Search form -->
@@ -10,16 +10,16 @@
           </form>
           <!-- Navbar links -->
           <ul class="navbar-nav align-items-center  ml-md-auto ">
-            <!-- <li class="nav-item d-xl-none"> -->
+            <li class="nav-item d-xl-none">
               <!-- Sidenav toggler -->
-              <!-- <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
+               <div class="pr-3 sidenav-toggler sidenav-toggler-dark" data-action="sidenav-pin" data-target="#sidenav-main">
                 <div class="sidenav-toggler-inner">
                   <i class="sidenav-toggler-line"></i>
                   <i class="sidenav-toggler-line"></i>
                   <i class="sidenav-toggler-line"></i>
                 </div>
               </div>
-            </li> -->
+            </li>
             <li class="nav-item d-sm-none">
               <a class="nav-link" href="#" data-action="search-show" data-target="#navbar-search-main">
                 <!-- <i class="ni ni-zoom-split-in"></i> -->
@@ -188,7 +188,7 @@
                     <span class="mb-0 text-sm  font-weight-bold" style="color:white;">Admin</span>
                     </a>
                     <a href="index.php">
-                    <span class="btn btn-success" style="color:white;">Logout</span>
+                    <span class="btn btn-danger" style="color:white;">Logout</span>
 </a>
                   </div>
                 </div>

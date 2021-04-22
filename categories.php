@@ -16,7 +16,7 @@
 
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-primary pb-6">
+    <div class="header bg-dark pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
@@ -76,7 +76,7 @@
                       <div class="d-flex align-items-center">
                       <form action="edit.php" method="GET">
                       <input type="hidden" name="packageId" value="<?php echo $row['packageId']; ?>">
-                        <button class="btn btn-primary" type="submit" name="edit_category">Edit</button>
+                        <button class="btn btn-danger" type="submit" name="edit_category">Edit</button>
                       
                       </form>
                       </div>
@@ -92,16 +92,13 @@
             <div class="card-footer py-4">
               <nav aria-label="...">
                 <ul class="pagination justify-content-end mb-0">
-                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#bd-example-modal-lg">Add New Item</button>
+                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#bd-example-modal-lg">Add New Item</button>
                <div class="modal fade bd-example-modal-lg" id="bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <form method="POST" action="code.php"  enctype="multipart/form-data">
 <div class="container">
-    <div class="form-group">
-    <label for="exampleFormControlFile1">Add Picture</label>
-    <input type="file" name="myimage" class="form-control" id="exampleFormControlFile1">
-  </div>
+    
   <div class="form-group">
     <label for="exampleFormControlFile1">Select Package</label>
     <select name="pId" class="form-control" id="">
@@ -126,15 +123,18 @@
     <label for="exampleFormControlFile1">Add Price</label>
     <input type="number" name="price" class="form-control" id="exampleFormControlFile1">
   </div>
-
-  <button type="submit" class="btn btn-primary" name="Add_item">Add</button>
+    <div class="form-group">
+    <label for="exampleFormControlFile1">Time Require</label>
+    <input type="text" name="timeRequire" class="form-control" id="exampleFormControlFile1">
+  </div>
+  <button type="submit" class="btn btn-danger" name="Add_item">Add</button>
 </div>
   <br>
 </form>
     </div>
   </div>
 </div>
-<button class="btn btn-primary" data-toggle="modal" data-target="#bd-example-modal-lg-a">Add New Category</button>
+<button class="btn btn-danger" data-toggle="modal" data-target="#bd-example-modal-lg-a">Add New Category</button>
   <div class="modal fade bd-example-modal-lg" id="bd-example-modal-lg-a" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -150,32 +150,14 @@
     <input type="text" name="packageName" class="form-control" id="exampleFormControlFile1">
   </div>
 
-  <button type="submit" class="btn btn-primary" name="Add_package">Add</button>
+  <button type="submit" class="btn btn-danger" name="Add_package">Add</button>
 </div>
   <br>
 </form>
     </div>
   </div>
 </div>
-                  <li class="page-item disabled">
-                    <a class="page-link" href="#" tabindex="-1">
-                      <i class="fas fa-angle-left"></i>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                  </li>
-                  <li class="page-item active">
-                    <a class="page-link" href="#">1</a>
-                  </li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
-                  </li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">
-                      <i class="fas fa-angle-right"></i>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </li>
+                  
                 </ul>
               </nav>
             </div>

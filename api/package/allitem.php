@@ -41,8 +41,8 @@ if($num>0){
             "itemName" => $itemName,
             "itemPrice" => $itemPrice,
             "packageId" => $packageId,
-            "itemPicture" => $itemPicture,
-
+        
+           
 
 
 

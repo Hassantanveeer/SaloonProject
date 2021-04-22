@@ -16,7 +16,7 @@
 
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-primary pb-6">
+    <div class="header bg-dark pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
@@ -33,29 +33,28 @@
           <div class="card">
             <!-- Card header -->
             <div class="card-header border-0">
-              <h3 class="mb-0">Categories List</h3>
+              <h3 class="mb-0">Feedback List</h3>
             </div>
             <!-- Light table -->
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col" class="sort" data-sort="completion">Name</th>
+                    <th scope="col" class="sort" data-sort="completion">User Email</th>
 
-                    <th scope="col" class="sort" data-sort="name">Edit</th>
+                    <th scope="col" class="sort" data-sort="name">Feedback</th>
                     
                     
                     <th scope="col"></th>
                   </tr>
                 </thead>
                   <?php 
-                                    $query="SELECT * from expense";
+                                    $query="SELECT * from feedback";
                                     $query_run=mysqli_query($connection,$query);
                                     
                                     if(mysqli_num_rows($query_run)>0){
 
                                     while ($row=mysqli_fetch_assoc($query_run)){
-                                                            
                                     ?>
 
                 <tbody class="list">
@@ -65,13 +64,13 @@
                         
                         <div class="media-body">
                         <a href="s">
-                          <span class="name mb-0 text-sm"><?php echo $row['name']; ?></span>
+                          <span class="name mb-0 text-sm"><?php echo $row['feedback']; ?></span>
                           </a>
                         </div>
                       </div>
                     </th>
                     <td>
-                    <?php echo $row['expense']; ?>
+                    <?php echo $row['userEmail']; ?>
                     </td>
                
                    

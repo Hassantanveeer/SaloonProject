@@ -26,7 +26,11 @@ if(
     !empty($data->description) &&
     !empty($data->time) &&
     !empty($data->date) &&  
-    !empty($data->total) 
+    !empty($data->total)&&
+    !empty($data->firestoreId) &&
+    !empty($data->service) 
+
+
 
 ){
   
@@ -36,6 +40,9 @@ if(
     $product->time = $data->time;
     $product->date = $data->date;
     $product->total = $data->total;
+    $product->firestoreId = $data->firestoreId;
+    $product->service = $data->service;
+
 
   
     // create the product

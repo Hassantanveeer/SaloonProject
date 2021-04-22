@@ -3,26 +3,33 @@ include("db.php");
 
 
 if(isset($_POST['Add_item'])){
-    $currentDir = getcwd();
-    $uploadDirectory = "/upload/";  
-    $picturename=$_FILES['myimage']['name'];
-    @$fileName = $_FILES['myimage']['name'];
-    @$fileTmpName  = $_FILES['myimage']['tmp_name'];
-    $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
-
+    // $currentDir = getcwd();
+    // $uploadDirectory = "/upload/";  
+    // $picturename=$_FILES['myimage']['name'];
+    // @$fileName = $_FILES['myimage']['name'];
+    // @$fileTmpName  = $_FILES['myimage']['tmp_name'];
+    // $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
+    
     $packageId=$_POST['pId'];
     $itemName=$_POST['itemName'];
     $price=$_POST['price'];
-    $query="INSERT into item(itemName,itemPrice,itemPicture,packageId) values('$itemName','$price','$picturename','$packageId')";
+    $timeRequire=$_POST['timeRequire'];
+
+    $query="INSERT into item(itemName,itemPrice,timeRequire,packageId) values('$itemName','$price','$timeRequire','$packageId')";
     $query_run=mysqli_query($connection,$query);
-    if(move_uploaded_file($fileTmpName, $uploadPath)){
             if($query_run){
                 
             echo "<script>alert('New Item Added!');</script>";            
             echo "<script>window.location.href='categories.php';</script>";  
+           // echo "Done";
 
             }  
-        }
+            else{
+                 echo "<script>alert('New Item Not Added!');</script>";            
+            echo "<script>window.location.href='categories.php';</script>";  
+
+            }
+    
 
 }
 if(isset($_POST['Add_package'])){
@@ -45,6 +52,9 @@ if(isset($_POST['Add_package'])){
             echo "<script>window.location.href='categories.php';</script>";  
 
             }  
+        }else{
+             echo "<script>alert('Pic Not Uploaded!');</script>";            
+            echo "<script>window.location.href='categories.php';</script>";  
         }
 
 }
@@ -69,33 +79,32 @@ if(isset($_POST['edit_package'])){
             echo "<script>window.location.href='categories.php';</script>";  
 
             }  
+        }else{
+             echo "<script>alert('Pic Not Uploaded!');</script>";            
+            echo "<script>window.location.href='categories.php';</script>";  
         }
 
 }
 
 if(isset($_POST['edit_item'])){
-    $currentDir = getcwd();
-    $uploadDirectory = "/upload/";  
-    $picturename=$_FILES['myimage']['name'];
-    @$fileName = $_FILES['myimage']['name'];
-    @$fileTmpName  = $_FILES['myimage']['tmp_name'];
-    $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
 
 
     $itemName=$_POST['itemName'];
     $id=$_POST['hiddenId'];
     $price=$_POST['price'];
+    $time=$_POST['time'];
 
-
-    $query="UPDATE item set itemName='$itemName',itemPicture='$picturename',itemPrice='$price' where itemId='$id'";
+    $query="UPDATE item set itemName='$itemName',timeRequire='$time',itemPrice='$price' where itemId='$id'";
     $query_run=mysqli_query($connection,$query);
-    if(move_uploaded_file($fileTmpName, $uploadPath)){
             if($query_run){
                 
             echo "<script>alert('item Updated!');</script>";            
             echo "<script>window.location.href='categories.php';</script>";  
 
             }  
+        else{
+             echo "<script>alert('Pic Not Uploaded!');</script>";            
+            echo "<script>window.location.href='categories.php';</script>";  
         }
 
 }
@@ -146,5 +155,20 @@ if(mysqli_num_rows($query_run)>0){
         echo "<script>alert('email or password  incorrect!');</script>";            
         echo "<script>window.location.href='index.php';</script>";
     }
+}
+
+if (isset($_POST['addPromo'])){
+    $promo=$_POST['promo'];
+    $discount=$_POST['discount'];
+    $expiry=$_POST['expiry'];
+    $query="INSERT into promo(name,discount,expiryDate) values('$promo','$discount','$expiry')";
+    $query_run=mysqli_query($connection,$query);
+    if($query_run){
+        
+        echo "<script>alert('New Promo Added!');</script>";            
+        echo "<script>window.location.href='home.php';</script>";  
+
+     }
+    
 }
 ?>

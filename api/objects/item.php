@@ -10,8 +10,7 @@ class Item{
     public $itemName;
     public $itemPrice;
     public $packageId;
-    public $itemPicture;
-
+   
   
     // constructor with $db as database connection
     public function __construct($db){

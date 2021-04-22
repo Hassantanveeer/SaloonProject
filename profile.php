@@ -16,7 +16,7 @@
 
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-primary pb-6">
+    <div class="header bg-dark pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
@@ -63,7 +63,7 @@
                         <input type="text"  name="pass" class="form-control" value="<?php echo $row['password']; ?>" placeholder="0000">
                       </div>
                     </div>
-                    <button type="submit" class="btn btn-primary" name="UpdateProfile"> Update </button>
+                    <button type="submit" class="btn btn-danger" name="UpdateProfile"> Update </button>
                   </div>
                 </div>
                 <hr class="my-4" />

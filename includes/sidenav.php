@@ -11,6 +11,7 @@
         <div class="collapse navbar-collapse" id="sidenav-collapse-main">
           <!-- Nav items -->
           <ul class="navbar-nav">
+         
             <li class="nav-item">
               <a class="nav-link active" href="home.php">
                 <i class="ni ni-tv-2 text-primary"></i>
@@ -23,19 +24,24 @@
                 <span class="nav-link-text">Categories</span>
               </a>
             </li>
-            <li class="nav-item">
+            <!-- <li class="nav-item">
               <a class="nav-link" href="upgrade.php">
                 <i class="ni ni-pin-3 text-primary"></i>
                 <span class="nav-link-text">Miscellenous</span>
               </a>
-            </li>
+            </li> -->
             <li class="nav-item">
               <a class="nav-link" href="list.php">
                 <i class="ni ni-like-2 text-primary"></i>
-                <span class="nav-link-text">List Of Expense</span>
+                <span class="nav-link-text">List Of Feedbacks</span>
               </a>
             </li>
-            
+            <li class="nav-item">
+              <a class="nav-link" href="promo.php">
+                <i class="ni ni-check-bold text-primary"></i>
+                <span class="nav-link-text">PromoCode</span>
+              </a>
+            </li>
             
             <li class="nav-item">
               <a class="nav-link" href="tables.php">

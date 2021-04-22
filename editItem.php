@@ -16,7 +16,7 @@
 
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-primary pb-6">
+    <div class="header bg-dark pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
@@ -57,7 +57,7 @@
     <input type="text" name="price" class="form-control" id="exampleFormControlFile1">
   </div>
 
-  <button type="submit" class="btn btn-primary" name="edit_item">Add</button>
+  <button type="submit" class="btn btn-danger" name="edit_item">Add</button>
 </div>
   <br>
 </form> 

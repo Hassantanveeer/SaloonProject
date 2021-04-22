@@ -16,7 +16,7 @@
 
     <!-- Header -->
     <!-- Header -->
-    <div class="header bg-primary pb-6">
+    <div class="header bg-dark pb-6">
       <div class="container-fluid">
         <div class="header-body">
           <div class="row align-items-center py-4">
@@ -42,6 +42,7 @@
                   <tr>
                     <th scope="col" class="sort" data-sort="completion">Name</th>
                     <th scope="col" class="sort" data-sort="completion">Price</th>
+                    <th scope="col" class="sort" data-sort="completion">Time Require</th>
 
                     <th scope="col" class="sort" data-sort="name">Edit</th>
                     
@@ -64,9 +65,9 @@
                   <tr>
                     <th scope="row">
                       <div class="media align-items-center">
-                        <a href="subcategories.php" class="avatar rounded-circle mr-3">
+                        <!-- <a href="subcategories.php" class="avatar rounded-circle mr-3">
                           <img alt="Image placeholder" src="upload/<?php echo $row['itemPicture']; ?>">
-                        </a>
+                        </a> -->
                         <div class="media-body">
                           <span class="name mb-0 text-sm"><?php echo $row['itemName']; ?></span>
                         </div>
@@ -79,9 +80,14 @@
                     </td>
                     <td>
                       <div class="d-flex align-items-center">
+                        <p><?php echo $row['timeRequire']; ?></p>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
                             <form action="editItem.php" method="GET">
                             <input type="hidden" name="itemId" value="<?php echo $row['itemId']; ?>">
-                            <button class="btn btn-primary" type="submit" name="edit_item">Edit</button>
+                            <button class="btn btn-danger" type="submit" name="edit_item">Edit</button>
                       </form>
                       </div>
                     </td>
