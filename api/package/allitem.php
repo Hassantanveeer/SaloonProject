@@ -41,11 +41,7 @@ if($num>0){
             "itemName" => $itemName,
             "itemPrice" => $itemPrice,
             "packageId" => $packageId,
-        
-           
-
-
-
+            "timeRequire" => $timeRequire
         );
   
         array_push($products_arr["records"], $product_item);

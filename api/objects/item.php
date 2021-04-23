@@ -10,6 +10,7 @@ class Item{
     public $itemName;
     public $itemPrice;
     public $packageId;
+    public $timeRequire;
    
   
     // constructor with $db as database connection
