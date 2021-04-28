@@ -43,6 +43,7 @@ if($num>0){
             "total" => $total,
             "date" => $date,
             "service" => $service,
+            "status"=> $status,
                 );
   
         array_push($products_arr["records"], $product_item);

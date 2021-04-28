@@ -32,9 +32,27 @@
         <div class="col">
           <div class="card">
             <!-- Card header -->
-            <div class="card-header border-0">
+            
+               <form action="" method="get">
+            <div class="row">
+              <div class="col-sm-8">
+                <div class="card-header border-0">
               <h3 class="mb-0">Booking List</h3>
             </div>
+              </div>
+              <div class="col-sm-2">
+              <label for=""></label>
+              <input type="date" name="start" class="form-control">
+
+              </div>
+              <div class="col-sm-2">
+              <label for=""></label><br>
+              <button type="submit" class="btn btn-primary">Filter</button>
+              </div>
+              
+            </div>
+            </form>
+            
             <!-- Light table -->
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
@@ -47,14 +65,23 @@
                     <th scope="col" class="sort" data-sort="status">Time</th>
                     <th scope="col" class="sort" data-sort="status">Total</th>
                     <th scope="col" class="sort" data-sort="status">Service</th>
+                    <th scope="col" class="sort" data-sort="status">Status Confirmation</th>
 
 
                     <th scope="col"></th>
                   </tr>
                 </thead>
                  <?php 
+                 if(isset($_GET['start'])!='')
+  {
+    $start=$_GET['start'];
+    $query="SELECT * from booking where date='$start'";
+$query_run=mysqli_query($connection,$query);
+
+}else{
+                                    
                                     $query="SELECT * from booking";
-                                    $query_run=mysqli_query($connection,$query);
+                                    $query_run=mysqli_query($connection,$query);}
                                     
                                     if(mysqli_num_rows($query_run)>0){
 
@@ -109,11 +136,44 @@
                         </div>
                       </div>
                     </td>
+                    <td>
+                      <div class="align-items-center">
+                       
+<button class="btn btn-danger" type="button" name="bookingConfirmation" data-toggle="modal" data-target="#bd-example-modal<?php echo $row['id']; ?>"><?php echo $row['status']; ?></button>
+                      
+<div class="modal fade bd-example-modal-lg" id="bd-example-modal<?php echo $row['id']; ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <form method="POST" action="code.php"  enctype="multipart/form-data">
+<div class="container">
+<input type="hidden" name="bookingId" value="<?php echo $row['id']; ?>">
+<input type="hidden" name="firestoreId" value="<?php echo $row['token']; ?>">
+
+                       
+<br><br>
+   <select name="confirmation" id="" class="form-control">
+   <option value="Your Booking is Confirmed! Please Proceed The Payment">Confirmed</option>
+   <option value="Your Booking is Cancelled">Cancelled</option>
+   
+   </select><br>
+  <button type="submit" class="btn btn-danger" name="updateBooking">Add</button>
+</div>
+  <br>
+</form>
+    </div>
+  </div>
+</div>
+                      </div>
+                    </td>
                   </tr>
                  
                 </tbody>
 
-                <?php } } ?>
+                <?php } }
+                else{
+        echo "<script>alert('No records found at selected date!');</script>";            
+
+                } ?>
               </table>
             </div>
             <!-- Card footer -->
@@ -140,6 +200,11 @@
   <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
   <!-- Argon JS -->
   <script src="../assets/js/argon.js?v=1.2.0"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
 </body>
+
 
 </html>

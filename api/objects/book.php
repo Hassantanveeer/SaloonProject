@@ -13,6 +13,9 @@ class Booking{
     public $total;
     public $firestoreId;
     public $service;
+    public $status;
+    public $token;
+
   
     // constructor with $db as database connection
     public function __construct($db){
@@ -42,7 +45,7 @@ function create(){
     $query = "INSERT INTO
                 " . $this->table_name . "
             SET
-                userEmail=:userEmail, description=:description, time=:time, date=:date,total=:total,firestoreId=:firestoreId,service=:service";
+                userEmail=:userEmail, description=:description, time=:time, date=:date,total=:total,firestoreId=:firestoreId,service=:service,status=:status,token=:token";
   
     // prepare query
     $stmt = $this->conn->prepare($query);
@@ -55,6 +58,8 @@ function create(){
     $this->total=htmlspecialchars(strip_tags($this->total));
     $this->service=htmlspecialchars(strip_tags($this->service));
     $this->firestoreId=htmlspecialchars(strip_tags($this->firestoreId));
+    $this->status=htmlspecialchars(strip_tags($this->status));
+    $this->token=htmlspecialchars(strip_tags($this->token));
 
   
     // bind values
@@ -65,6 +70,8 @@ function create(){
     $stmt->bindParam(":total", $this->total);
     $stmt->bindParam(":firestoreId", $this->firestoreId);
     $stmt->bindParam(":service", $this->service);
+    $stmt->bindParam(":status", $this->status);
+    $stmt->bindParam(":token", $this->token);
 
 
   

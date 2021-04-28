@@ -42,7 +42,7 @@ if(
         http_response_code(201);
   
         // tell the user
-        echo json_encode(array("message" => "Booking Confirmed."));
+        echo json_encode(array("message" => "Feedback Given."));
     }
   
     // if unable to create the product, tell the user
@@ -52,7 +52,7 @@ if(
         http_response_code(503);
   
         // tell the user
-        echo json_encode(array("message" => "Unable to Book."));
+        echo json_encode(array("message" => "Unable to Give Feedback."));
     }
 }
   
@@ -63,6 +63,6 @@ else{
     http_response_code(400);
   
     // tell the user
-    echo json_encode(array("message" => "Unable to Book. Data is incomplete."));
+    echo json_encode(array("message" => "Unable to Send. Data is incomplete."));
 }
 ?>

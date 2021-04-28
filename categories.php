@@ -43,6 +43,8 @@
                     <th scope="col" class="sort" data-sort="completion">Name</th>
 
                     <th scope="col" class="sort" data-sort="name">Edit</th>
+                    <th scope="col" class="sort" data-sort="name">Delete</th>
+
                     
                     
                     <th scope="col"></th>
@@ -81,6 +83,15 @@
                       </form>
                       </div>
                     </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                      <form action="code.php" method="POST">
+                      <input type="hidden" name="packageDeleteId" value="<?php echo $row['packageId']; ?>">
+                        <button class="btn btn-danger" type="submit" name="delete_category">Delete</button>
+                      
+                      </form>
+                      </div>
+                    </td>
                
                    
                 </tbody>
@@ -92,8 +103,15 @@
             <div class="card-footer py-4">
               <nav aria-label="...">
                 <ul class="pagination justify-content-end mb-0">
-                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#bd-example-modal-lg">Add New Item</button>
-               <div class="modal fade bd-example-modal-lg" id="bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  
+  
+  
+  
+  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#bd-example-modal-lg">Add New Item</button>
+
+
+
+<div class="modal fade bd-example-modal-lg" id="bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
       <form method="POST" action="code.php"  enctype="multipart/form-data">
@@ -179,10 +197,10 @@
   <script src="../assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
   <!-- Argon JS -->
   <script src="../assets/js/argon.js?v=1.2.0"></script>
-  
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
+    
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" ></script>
 </body>
 
 </html>

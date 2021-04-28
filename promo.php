@@ -50,7 +50,7 @@
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-email">Discount</label>
-                        <input type="text"  name="discount" class="form-control" placeholder="">
+                        <input type="text"  name="discount" class="form-control" placeholder="10%">
                       </div>
                     </div>
                     <div class="col-lg-12">

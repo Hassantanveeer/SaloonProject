@@ -1,5 +1,6 @@
 <?php
 include("db.php");
+session_start();
 
 
 if(isset($_POST['Add_item'])){
@@ -144,7 +145,7 @@ if(isset($_POST['signin'])){
 if(mysqli_num_rows($query_run)>0){
     
     if($query_run){
-        
+        $_SESSION['username']=$email;
         echo "<script>alert('Loging in!');</script>";            
         echo "<script>window.location.href='home.php';</script>";  
 
@@ -170,5 +171,148 @@ if (isset($_POST['addPromo'])){
 
      }
     
+}
+
+if(isset($_POST['deletePromo'])){
+    $promo = $_POST['promoIds'];
+    $query="DELETE from promo where promoId='$promo'";
+    $query_run=mysqli_query($connection,$query);
+    if($query_run){
+        
+        echo "<script>alert('Promo Delete!');</script>";            
+        echo "<script>window.location.href='listPromo.php';</script>";  
+
+     }
+     else{
+      echo "<script>alert('Unable To Delete Promo!');</script>";            
+        echo "<script>window.location.href='listPromo.php';</script>";  
+  
+     }
+}
+if(isset($_POST['edit_promo'])){
+    $id=$_POST['promoId'];
+    $promoName=$_POST['promoName'];
+    $discount = $_POST['discount'];
+    $expiry=$_POST['expiryDate'];
+    $query="UPDATE promo set name='$promoName',discount='$discount',expiryDate='$expiry' where promoId='$id'";
+    $query_run=mysqli_query($connection,$query);
+    if($query_run){
+        
+        echo "<script>alert('Promo Updated!');</script>";            
+        echo "<script>window.location.href='listPromo.php';</script>";  
+
+     }
+     else{
+      echo "<script>alert('Unable To Update Promo!');</script>";            
+        echo "<script>window.location.href='listPromo.php';</script>";  
+  
+     }
+
+}
+
+if(isset($_POST['delete_category'])){
+    $promo = $_POST['packageDeleteId'];
+    $query="DELETE from package where packageId='$promo'";
+    $query_run=mysqli_query($connection,$query);
+    if($query_run){
+        
+        echo "<script>alert('Category Deleted!');</script>";            
+        echo "<script>window.location.href='categories.php';</script>";  
+
+     }
+     else{
+      echo "<script>alert('Unable To Delete Category!');</script>";            
+      echo "<script>window.location.href='categories.php';</script>";  
+  
+     }
+}
+
+if(isset($_POST['delete_item'])){
+    $promo = $_POST['itemDeleteId'];
+    $query="DELETE from item where itemId='$promo'";
+    $query_run=mysqli_query($connection,$query);
+    if($query_run){
+        
+        echo "<script>alert('Item Deleted!');</script>";            
+        echo "<script>window.location.href='categories.php';</script>";  
+
+     }
+     else{
+      echo "<script>alert('Unable To Delete Item!');</script>";            
+      echo "<script>window.location.href='categories.php';</script>";  
+  
+     }
+}
+
+if(isset($_POST['Add_slider'])){
+    $currentDir = getcwd();
+    $uploadDirectory = "/upload/";  
+    $picturename=$_FILES['myimages']['name'];
+    $fileName = $_FILES['myimages']['name'];
+    $fileTmpName  = $_FILES['myimages']['tmp_name'];
+    $uploadPath = $currentDir . $uploadDirectory . basename($fileName);
+
+    $query="INSERT into slider(image) values ('$picturename')";
+    $query_run = mysqli_query($connection,$query);
+    if(move_uploaded_file($fileTmpName, $uploadPath)){
+    
+     if($query_run){
+        
+        echo "<script>alert('Image Uploaded!');</script>";            
+        echo "<script>window.location.href='slider.php';</script>";  
+
+     }
+     }
+     else{
+      echo "<script>alert('Unable To Upload Image!');</script>";            
+      echo "<script>window.location.href='slider.php';</script>";  
+  
+     }
+    
+
+}
+if(isset($_POST['delete_slider'])){
+    $id=$_POST['sliderDeleteId'];
+     $query="DELETE from slider where sliderId='$id'";
+    $query_run=mysqli_query($connection,$query);
+    if($query_run){
+        
+        echo "<script>alert('Slider Deleted!');</script>";            
+        echo "<script>window.location.href='slider.php';</script>";  
+
+     }
+     else{
+      echo "<script>alert('Unable To Delete Slider Image!');</script>";            
+      echo "<script>window.location.href='slider.php';</script>";  
+  
+     }
+
+}
+
+if(isset($_POST['updateBooking'])){
+    include_once 'notify.php';
+    $confirmation = $_POST['confirmation'];
+    $id=$_POST['bookingId'];
+    $to=$_POST['firestoreId'];
+    $data = array(
+    'body' => $confirmation
+    );
+    $query="UPDATE booking set status='$confirmation' where id='$id'";
+    $query_run=mysqli_query($connection,$query);
+    if($query_run){
+        
+        sendPushNotification($to,$data);
+        echo "<script>alert('Status Updated!');</script>";            
+        echo "<script>window.location.href='tables.php';</script>"; 
+        
+         
+
+     }
+     else{
+      echo "<script>alert('Unable To Update Status!');</script>";            
+      echo "<script>window.location.href='tables.php';</script>";  
+  
+     }
+
 }
 ?>

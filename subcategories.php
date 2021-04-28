@@ -45,6 +45,7 @@
                     <th scope="col" class="sort" data-sort="completion">Time Require</th>
 
                     <th scope="col" class="sort" data-sort="name">Edit</th>
+                    <th scope="col" class="sort" data-sort="name">Delete</th>
                     
                     
                     <th scope="col"></th>
@@ -88,6 +89,14 @@
                             <form action="editItem.php" method="GET">
                             <input type="hidden" name="itemId" value="<?php echo $row['itemId']; ?>">
                             <button class="btn btn-danger" type="submit" name="edit_item">Edit</button>
+                      </form>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="d-flex align-items-center">
+                            <form action="code.php" method="POST">
+                            <input type="hidden" name="itemDeleteId" value="<?php echo $row['itemId']; ?>">
+                            <button class="btn btn-danger" type="submit" name="delete_item">Delete</button>
                       </form>
                       </div>
                     </td>

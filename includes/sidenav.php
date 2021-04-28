@@ -42,14 +42,30 @@
                 <span class="nav-link-text">PromoCode</span>
               </a>
             </li>
-            
+            <li class="nav-item">
+              <a class="nav-link" href="listPromo.php">
+                <i class="ni ni-badge text-primary"></i>
+                <span class="nav-link-text">List Of Promos</span>
+              </a>
+            </li>
             <li class="nav-item">
               <a class="nav-link" href="tables.php">
                 <i class="ni ni-key-25 text-info"></i>
                 <span class="nav-link-text">Booking</span>
               </a>
             </li>
-            
+            <li class="nav-item">
+              <a class="nav-link" href="slider.php">
+                <i class="ni ni-album-2 text-info"></i>
+                <span class="nav-link-text">Images Slider</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="push.php">
+                <i class="ni ni-cloud-upload-96 text-info"></i>
+                <span class="nav-link-text">Push Notification</span>
+              </a>
+            </li>
           </ul>
          
         </div>

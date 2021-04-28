@@ -1,4 +1,9 @@
-<?php include("db.php"); ?>
+<?php 
+include("db.php");
+include("security.php");
+
+
+?>
 
 <head>
   <meta charset="utf-8">

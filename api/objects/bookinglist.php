@@ -12,6 +12,7 @@ class BookingList{
     public $total;
     public $date;
     public $service;
+    public $status;
 
 
 

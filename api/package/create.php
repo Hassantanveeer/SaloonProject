@@ -28,6 +28,8 @@ if(
     !empty($data->date) &&  
     !empty($data->total)&&
     !empty($data->firestoreId) &&
+    !empty($data->status) &&
+    !empty($data->token) &&
     !empty($data->service) 
 
 
@@ -42,6 +44,9 @@ if(
     $product->total = $data->total;
     $product->firestoreId = $data->firestoreId;
     $product->service = $data->service;
+    $product->status = $data->status;
+    $product->token = $data->token;
+
 
 
   
